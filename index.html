@@ -1,0 +1,136 @@
+<!DOCTYPE html> <!--Define que el documento es HTML5-->
+<!--CRISTIAN PEREZ HERNANDEZ-->
+<html lang="es"> <!--Idioma en español-->
+    <head> <!--Metadatos como el conjunto de caracteres UTF-8 y configuracion de pantalla interactiva viewport-->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>TECNM-Suma de Riemann</title><!--Titulo en la pestaña del navegador-->
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+        <link rel="stylesheet" href="styles.css"><!--Le dice al navegador que use styles.css para aplicar estilos-->
+        <script src="script.js"></script>
+
+        <!--Libreria de matematicas MathJax-->
+        <script type="text/javascript" async src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+        <script type="text/javascript" async id="MathJax-script" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+        <link rel="icon" type="image/x-icon" href="https://www.tecnm.mx/images/tecnm_virtual/tecnm.png">
+
+
+    </head>
+    <body><!--Contenido visible en la pagina-->
+        <header><!--Define la cabecera de la pagina, que en este caso contiene la barra de navegacion-->
+            <nav><!--Representa un menu de navegacion dentro del header con el proposito de agrupar enlaces-->
+                <div class="TECNMLOGO" id="Inicio">
+                <img src="TECNM.png" alt="TECNM">
+                </div>
+                <ul><!--(Lista desornedada) para listar los elementos del menu-->
+                    <li><a href="#calc">Inicio</a></li><!--(list item)Representa un elemento dentro de cada menu de
+                    navegacion, <a>(anchor, crea enlaces)-->
+                    <li><a href="#ppls">Acerca de</a></li>
+                    <li><a href="#defi">Definicion</a></li>
+                    <li><a href="#">Historia</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main><!--Es el contenido principal de la pagina-->
+            <h1 id="calc">Suma de Riemann</h1><!--Titulo grande-->
+            <p>INSTRUCCIONES: <br>
+            INGRESA EN "a" y "b" EL INTERVALO DE LA FUNCION EN EL CUAL SE REALIZARA LA CUENTA,
+            "a" DEBE SER MENOR QUE "b". <br> EN "n" DEBES PONER EL NUMERO DE SUBINTERVALOS A REALIZAR.</p><!--parrafo de texto-->
+            
+            <section class="calculator">
+                <h2>Calculadora</h2>
+                <div class="calculator-container">
+            
+                    <div class="calc-space">
+                        <!--<nav class="mets">
+                            <ul>
+                                <li class="dropdown">
+                                    <a href="#">Método</a>
+                                    <ul class="dropdown-content">
+                                        <li><a href="#">1</a></li>
+                                        <li><a href="#">2</a></li>
+                                        <li><a href="#">3</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>-->
+                    
+                        <form id="calcForm">
+                        <label for="metmat">Metodo:</label>
+                        <input type="string" id="metmat" required><!--Metodo-->
+
+                        <label for="num1">a:</label>
+                        <input type="number" id="num1" required><!--Ingreso del dato 1-->
+
+                        <label for="num2">b:</label>
+                        <input type="number" id="num2" required><!--Ingreso del dato 2-->
+
+                        <label for="num3" >n:</label>
+                        <input type="number" id="num3" min="1" step="1" required><!--Ingreso del dato 3-->
+
+                        <button type="submit">Area</button><!--Boton-->
+                        </form>
+                        <h3>Resultado: <span id="result">-</span></h3>
+                    </div>  
+                    
+                    <div class="graphic-space">
+                        <img src="https://calculadorasonline.com/wp-content/uploads/2021/04/subintervalos-Suma-de-Riemann.jpg" alt="">
+                        <label for="Funcion" >Funcion:</label>
+                        <input type="numer" id="inputFuntion" value="2x^2+2"><!--Ingreso del dato 3-->
+                        <p id="outputEcuacion">Tu ecuación aparecerá aquí: \( 2x^2+2 \)</p>
+
+                    </div>
+            </section>
+
+            <section class="hero" id="defi">
+                <img src="https://calculadorasonline.com/wp-content/uploads/2021/04/Suma-de-Riemann-por-la-derecha.jpg" alt="Imagen de ejemplo">
+                <h2>Definicion</h2>
+
+                <p>La <strong>suma de Riemann</strong> es un método matemático para <b>aproximar el área bajo una curva </b>en un intervalo determinado. Se usa como base para definir la <b>integral definida</b> en cálculo. </p>
+                <p>
+                    ¿Cómo funciona?  <br>
+                    1. Se divide el intervalo \([a, b]\) en pequeños subintervalos de ancho \(\Delta x\).  <br>
+                    2. Se elige un punto dentro de cada subintervalo (puede ser el izquierdo, derecho o el centro).  <br>
+                    3. Se evalúa la función en esos puntos para obtener la altura de pequeños rectángulos.  <br>
+                    4. Se suman las áreas de todos los rectángulos <i>(base x altura)</i>.  <br> 
+                    Matemáticamente, la suma de Riemann se expresa como:  <br>
+                    <p>
+                    S = \(\sum_{i=1}^{n} f(x)\Delta x\) <br> <!--Expresion matematica usando la libreria MathJax-->
+                    donde \( f(x_i) \) es la altura del rectángulo y \( \Delta x \) es su base.</p>
+                    
+                    
+                <p>¿Para qué sirve? <br> 
+                - Se usa en física, economía e ingeniería para calcular áreas, volúmenes y otros valores acumulados.  <br>
+                - Si reducimos el ancho de los rectángulos (\(\Delta x \to 0\)), la suma de Riemann se convierte en una <b>integral definida</b>, dando el área exacta bajo la curva. <br>
+                En resumen, la suma de Riemann es una forma de <b>sumar muchas áreas pequeñas</b> para estimar una más grande, lo que nos lleva al concepto de integración.</p>
+                
+                <a href="#" class="button">Mas informacion</a>
+            </section>
+            <section class="people"><!--Creditos de los desarroladores-->
+                <h2 id="ppls">Quienes somos</h2>
+                <div class="people-container"><!--Contenedor de los creditos-->
+                    <div class="ppl">
+                        <img src="cris.jpg" alt="cris">
+                        <h3>Cristian</h3>
+                        <p>Encargado del Front-End, tecnico electromecanico y estudiante de Ingenieria en Inteligencia Artificial.</p>
+                    </div>
+                    <div class="ppl">
+                        <img src="hanna.jpg" alt="hanna">
+                        <h3>Hanna</h3>
+                        <p>Encagada del backend, tecnico en programacion, estudiante de Ingenieria en AI.</p>
+                    </div>
+                </div>
+            </section>
+        </main>
+        
+        <button id="floating-button">
+            <a href="#Inicio">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-house" viewBox="0 1.1 16 16">
+                <path d="M8.707 1.5a1 1 0 0 0-1.414 0L.646 8.146a.5.5 0 0 0 .708.708L2 8.207V13.5A1.5 1.5 0 0 0 3.5 15h9a1.5 1.5 0 0 0 1.5-1.5V8.207l.646.647a.5.5 0 0 0 .708-.708L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293zM13 7.207V13.5a.5.5 0 0 1-.5.5h-9a.5.5 0 0 1-.5-.5V7.207l5-5z"/>
+              </svg>
+            </a>
+        </button>
+        
+    </body>
+</html>
