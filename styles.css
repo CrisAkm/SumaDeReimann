@@ -196,6 +196,7 @@ nav ul li a:hover { /*Es un pseudoelemento que aplica estilos cuando
     border-radius: 10px;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     margin: 20px auto;
+    
 }
 .calculator h2{
     font-size: 24px;
@@ -254,15 +255,16 @@ nav ul li a:hover { /*Es un pseudoelemento que aplica estilos cuando
 .calculator-container {
     display: flex;
     justify-content: center;
-    gap: 20px; /*Espaciado entre los elementos(tarjetas)*/
+    gap: 10px; /*Espaciado entre los elementos(tarjetas)*/
     flex-wrap: wrap; /*Indica que los elementos dentro de un display
     flex deben ajustarse a una nueva linea cuando no caben en la pantalla*/
 }
 
-.graphic-space img{
+.graphic-space canvas{
     border-radius: 10px;
     border: 1px solid #ccc;
-    max-width: 70%;
+    max-width: 600px;
+    max-height: 600px;
 }
 
 .mets ul {

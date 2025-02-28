@@ -30,16 +30,17 @@
                     navegacion, <a>(anchor, crea enlaces)-->
                     <li><a href="#ppls">Acerca de</a></li>
                     <li><a href="#defi">Definicion</a></li>
-                    <li><a href="#">Historia</a></li>
+                    <li><a href="#historia">Historia</a></li>
                 </ul>
             </nav>
         </header>
 
         <main><!--Es el contenido principal de la pagina-->
-            <h1 id="calc">Hola Chucho y Kim/h1><!--Titulo grande-->
+            <h1 id="calc">Suma de Riemann</h1><!--Titulo grande-->
             <p>INSTRUCCIONES: <br>
             INGRESA EN "a" y "b" EL INTERVALO DE LA FUNCION EN EL CUAL SE REALIZARA LA CUENTA,
-            "a" DEBE SER MENOR QUE "b". <br> EN "n" DEBES PONER EL NUMERO DE SUBINTERVALOS A REALIZAR.</p><!--parrafo de texto-->
+            "a" DEBE SER MENOR QUE "b". <br> EN "n" DEBES PONER EL NUMERO DE SUBINTERVALOS A REALIZAR <br>
+            EN METODO, ESCRIBE "centro, izquierda O derecha".</p><!--parrafo de texto-->
             
             <section class="calculator">
                 <h2>Calculadora</h2>
@@ -78,10 +79,10 @@
                     </div>  
                     
                     <div class="graphic-space">
-                        <canvas id="grafica" width="600" height="400"></canvas>
+                        <canvas id="grafica" ></canvas>
                         <label for="Funcion" >Funcion:</label>
-                        <input type="numer" id="inputFuntion" value="2x^2+2" required><!--Ingreso del dato 3-->
-                        <p id="outputEcuacion">Tu ecuación aparecerá aquí: \( 2x^2+2 \)</p> 
+                        <input type="numer" id="inputFuntion" value="2x*x+2" required><!--Ingreso del dato 3-->
+                        <p id="outputEcuacion">Tu ecuación aparecerá aquí: \( 2x*x+2 \)</p> 
 
                     </div>
             </section></form>
@@ -107,8 +108,31 @@
                 - Se usa en física, economía e ingeniería para calcular áreas, volúmenes y otros valores acumulados.  <br>
                 - Si reducimos el ancho de los rectángulos (\(\Delta x \to 0\)), la suma de Riemann se convierte en una <b>integral definida</b>, dando el área exacta bajo la curva. <br>
                 En resumen, la suma de Riemann es una forma de <b>sumar muchas áreas pequeñas</b> para estimar una más grande, lo que nos lleva al concepto de integración.</p>
-                
-                <a href="#" class="button">Mas informacion</a>
+
+
+            <section class="historia">
+                k
+                <h2 id="historia">Historia de la Suma de Riemann</h2>
+                <p>La <strong>suma de Riemann</strong> es un método desarrollado por <strong>Bernhard Riemann</strong> en 1854 
+                para aproximar el área bajo una curva mediante la suma de áreas de rectángulos. Su importancia radica en que 
+                sentó las bases del <em>cálculo integral moderno</em>.</p>
+
+                <h3>Antecedentes Históricos</h3>
+                <ul>
+                    m
+                    <li><strong>Antigua Grecia:</strong> <em>Eudoxo</em> utilizó el método de exhaución para medir áreas.</li>
+                    <li><strong>Siglo XVII:</strong> <em>Isaac Newton</em> y <em>Gottfried Leibniz</em> formalizaron el cálculo integral.</li>
+                    <li><strong>Siglo XIX:</strong> <em>Augustin-Louis Cauchy</em> definió con mayor precisión los conceptos de límites y continuidad.</li>
+                    <li><strong>1854:</strong> <em>Bernhard Riemann</em> introdujo la <strong>definición formal de la integral</strong> basada en 
+                    sumas de rectángulos, conocidas hoy como <strong>sumas de Riemann</strong>.</li>
+                </ul>
+
+                <p>Este concepto es clave en el desarrollo del <strong>cálculo y análisis matemático</strong>, permitiendo la 
+                formulación rigurosa de la integral definida.</p>    
+            </section>
+
+
+                <a href="https://www.redalyc.org/journal/6079/607968030005/607968030005.pdf" class="button">Mas informacion</a>
             </section>
             <section class="people"><!--Creditos de los desarroladores-->
                 <h2 id="ppls">Quienes somos</h2>
@@ -125,6 +149,7 @@
                     </div>
                 </div>
             </section>
+        
         </main>
         
         <button id="floating-button">
